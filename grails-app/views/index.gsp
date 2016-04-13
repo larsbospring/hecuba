@@ -1,123 +1,221 @@
 <!doctype html>
 <html>
-    <head>
-        <meta name="layout" content="main"/>
-        <title>Welcome to Grails</title>
-        <style type="text/css" media="screen">
-            #status {
-                background-color: #eee;
-                border: .2em solid #fff;
-                margin: 2em 2em 1em;
-                padding: 1em;
-                width: 12em;
-                float: left;
-                -moz-box-shadow: 0px 0px 1.25em #ccc;
-                -webkit-box-shadow: 0px 0px 1.25em #ccc;
-                box-shadow: 0px 0px 1.25em #ccc;
-                -moz-border-radius: 0.6em;
-                -webkit-border-radius: 0.6em;
-                border-radius: 0.6em;
-            }
+<head>
+    <meta name="layout" content="main"/>
+</head>
 
-            #status ul {
-                font-size: 0.9em;
-                list-style-type: none;
-                margin-bottom: 0.6em;
-                padding: 0;
-            }
+<body>
 
-            #status li {
-                line-height: 1.3;
-            }
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
 
-            #status h1 {
-                text-transform: uppercase;
-                font-size: 1.1em;
-                margin: 0 0 0.3em;
-            }
-
-            #page-body {
-                margin: 2em 1em 1.25em 18em;
-            }
-
-            h2 {
-                margin-top: 1em;
-                margin-bottom: 0.3em;
-                font-size: 1em;
-            }
-
-            p {
-                line-height: 1.5;
-                margin: 0.25em 0;
-            }
-
-            #controller-list ul {
-                list-style-position: inside;
-            }
-
-            #controller-list li {
-                line-height: 1.3;
-                list-style-position: inside;
-                margin: 0.25em 0;
-            }
-
-            @media screen and (max-width: 480px) {
-                #status {
-                    display: none;
-                }
-
-                #page-body {
-                    margin: 0 1em 1em;
-                }
-
-                #page-body h1 {
-                    margin-top: 0;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div id="status" role="complementary">
-            <h1>Application Status</h1>
-            <ul>
-                <li>Environment: ${grails.util.Environment.current.name}</li>
-                <li>App profile: ${grailsApplication.config.grails?.profile}</li>
-                <li>App version: <g:meta name="info.app.version"/></li>
-                <li>Grails version: <g:meta name="info.app.grailsVersion"/></li>
-                <li>Groovy version: ${GroovySystem.getVersion()}</li>
-                <li>JVM version: ${System.getProperty('java.version')}</li>
-                <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
             </ul>
-            <h1>Artefacts</h1>
-            <ul>
-                <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-                <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-                <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-                <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>                    
+
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
             </ul>
-            <h1>Installed Plugins</h1>
-            <ul>
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li>${plugin.name} - ${plugin.version}</li>
-                </g:each>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
             </ul>
         </div>
-        <div id="page-body" role="main">
-            <h1>Welcome to Grails</h1>
-            <p>Congratulations, you have successfully started your first Grails application! At the moment
-               this is the default page, feel free to modify it to either redirect to a controller or display whatever
-               content you may choose. Below is a list of controllers that are currently deployed in this application,
-               click on each to execute its default action:</p>
 
-            <div id="controller-list" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-                    </g:each>
-                </ul>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
+
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+            </div>
+
+            <h2 class="sub-header">Section title</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+                    <tr>
+                        <td>1,002</td>
+                        <td>amet</td>
+                        <td>consectetur</td>
+                        <td>adipiscing</td>
+                        <td>elit</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>Integer</td>
+                        <td>nec</td>
+                        <td>odio</td>
+                        <td>Praesent</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>libero</td>
+                        <td>Sed</td>
+                        <td>cursus</td>
+                        <td>ante</td>
+                    </tr>
+                    <tr>
+                        <td>1,004</td>
+                        <td>dapibus</td>
+                        <td>diam</td>
+                        <td>Sed</td>
+                        <td>nisi</td>
+                    </tr>
+                    <tr>
+                        <td>1,005</td>
+                        <td>Nulla</td>
+                        <td>quis</td>
+                        <td>sem</td>
+                        <td>at</td>
+                    </tr>
+                    <tr>
+                        <td>1,006</td>
+                        <td>nibh</td>
+                        <td>elementum</td>
+                        <td>imperdiet</td>
+                        <td>Duis</td>
+                    </tr>
+                    <tr>
+                        <td>1,007</td>
+                        <td>sagittis</td>
+                        <td>ipsum</td>
+                        <td>Praesent</td>
+                        <td>mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,008</td>
+                        <td>Fusce</td>
+                        <td>nec</td>
+                        <td>tellus</td>
+                        <td>sed</td>
+                    </tr>
+                    <tr>
+                        <td>1,009</td>
+                        <td>augue</td>
+                        <td>semper</td>
+                        <td>porta</td>
+                        <td>Mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,010</td>
+                        <td>massa</td>
+                        <td>Vestibulum</td>
+                        <td>lacinia</td>
+                        <td>arcu</td>
+                    </tr>
+                    <tr>
+                        <td>1,011</td>
+                        <td>eget</td>
+                        <td>nulla</td>
+                        <td>Class</td>
+                        <td>aptent</td>
+                    </tr>
+                    <tr>
+                        <td>1,012</td>
+                        <td>taciti</td>
+                        <td>sociosqu</td>
+                        <td>ad</td>
+                        <td>litora</td>
+                    </tr>
+                    <tr>
+                        <td>1,013</td>
+                        <td>torquent</td>
+                        <td>per</td>
+                        <td>conubia</td>
+                        <td>nostra</td>
+                    </tr>
+                    <tr>
+                        <td>1,014</td>
+                        <td>per</td>
+                        <td>inceptos</td>
+                        <td>himenaeos</td>
+                        <td>Curabitur</td>
+                    </tr>
+                    <tr>
+                        <td>1,015</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
